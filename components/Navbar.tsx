@@ -3,12 +3,11 @@ import Link from "next/link";
 import React from "react";
 import { auth, signIn, signOut } from "@/auth";
 
-
 const Navbar = async () => {
-  const session = await auth();// todo , add google auth in this app
+  const session = await auth(); // todo , add google auth in this app
 
   return (
-    <header className="px-5 py-3 bg-white shadow-sm font-work-sans">
+    <header className="px-5 py-3 bg-gray-50 shadow-sm font-work-sans">
       <nav className="flex justify-between items-center">
         <Link href={"/"}>
           <Image src="/logo.png" alt="logo" height={30} width={144} />
@@ -28,7 +27,6 @@ const Navbar = async () => {
                   await signOut({ redirectTo: "/" });
                 }}
               >
-                
                 <button type="submit">Logout</button>
               </form>
 
@@ -44,7 +42,16 @@ const Navbar = async () => {
                 await signIn("github");
               }}
             >
-              <button type="submit">Login</button>
+             
+      
+             <button className="p-[3px] relative" type="submit">
+  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+  <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent" >
+    Login
+  </div>
+</button>
+      
+              {/* <button type="submit">Login</button> */}
             </form>
           )}
         </div>
