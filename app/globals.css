@@ -95,6 +95,10 @@
     .profile_image {
         @apply rounded-full object-cover border-[3px] border-black;
     }
+    .animate-shimmer {
+        animation: shimmer 3s ease-in-out infinite;
+      }
+      
 
     /* idea details */
     .divider {
