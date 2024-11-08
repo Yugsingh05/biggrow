@@ -4,7 +4,11 @@ import React from "react";
 import { auth, signIn, signOut } from "@/auth";
 
 const Navbar = async () => {
-  const session = await auth(); // todo , add google auth in this app
+  const session = await auth(); // Todo : , add google auth in this app
+
+  // console.log(session?.id);
+
+
 
   return (
     <header className="px-5 py-3 bg-gray-50 shadow-sm font-work-sans">
@@ -30,7 +34,8 @@ const Navbar = async () => {
                 <button type="submit">Logout</button>
               </form>
 
-              <Link href={`/user/${session?.user?.id}`}>
+              <Link href={`/user/${session?.id}`}>
+              
                 <span>{session?.user?.name}</span>
               </Link>
             </>
