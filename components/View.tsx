@@ -7,10 +7,12 @@ import { WriteClient } from '@/sanity/lib/write-client';
 
 const View = async ({ id }: { id: string }) => {
 
-  const { views: totalViews } = await client
+  let { views: totalViews } = await client
     .withConfig({ useCdn: false })
     .fetch(STARTUP_VIEWS_QUERY, { id });
-
+    
+    if( totalViews === null) totalViews = 1;
+  
   after(
     async () =>
 
