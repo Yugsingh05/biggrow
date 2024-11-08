@@ -1,27 +1,25 @@
-import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { auth, signIn, signOut } from "@/auth";
+import Image from "next/image";
+import { auth, signOut, signIn } from "@/auth";
+import { BadgePlus, LogOut } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Navbar = async () => {
-  const session = await auth(); // Todo : , add google auth in this app
-
-  // console.log(session?.id);
-
-
+  const session = await auth();
 
   return (
-    <header className="px-5 py-3 bg-gray-50 shadow-sm font-work-sans">
+    <header className="px-5 py-3 bg-white shadow-sm font-work-sans">
       <nav className="flex justify-between items-center">
-        <Link href={"/"}>
-          <Image src="/logo.png" alt="logo" height={30} width={144} />
+        <Link href="/">
+          <Image src="/logo.png" alt="logo" width={144} height={30} />
         </Link>
 
-        <div className="flex  items-center gap-5 text-black">
+        <div className="flex items-center gap-5 text-black">
           {session && session?.user ? (
             <>
-              <Link href={"/startup/create"}>
-                <span>Create</span>
+              <Link href="/startup/create">
+                <span className="max-sm:hidden">Create</span>
+                <BadgePlus className="size-6 sm:hidden" />
               </Link>
 
               <form
@@ -31,15 +29,22 @@ const Navbar = async () => {
                   await signOut({ redirectTo: "/" });
                 }}
               >
-                <button type="submit">Logout</button>
+                <button type="submit">
+                  <span className="max-sm:hidden">Logout</span>
+                  <LogOut className="size-6 sm:hidden text-red-500" />
+                </button>
               </form>
 
               <Link href={`/user/${session?.id}`}>
-              
-                <span>{session?.user?.name}</span>
+                <Avatar className="size-10">
+                  <AvatarImage
+                    src={session?.user?.image || ""}
+                    alt={session?.user?.name || ""}
+                  />
+                  <AvatarFallback>AV</AvatarFallback>
+                </Avatar>
               </Link>
             </>
-           
           ) : (
             <form
               action={async () => {
@@ -48,22 +53,11 @@ const Navbar = async () => {
                 await signIn("github");
               }}
             >
-             
-      
-             <button className="p-[3px] relative" type="submit">
-  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-  <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent" >
-    Login
-  </div>
-</button>
-      
-              {/* <button type="submit">Login</button> */}
+              <button type="submit">Login</button>
             </form>
           )}
         </div>
       </nav>
-
-      <nav />
     </header>
   );
 };
