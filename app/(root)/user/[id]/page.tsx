@@ -19,7 +19,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <>
-      <section className="profile_container">
+      <section className="profile_container !bg-cyan-600">
         <div className="profile_card">
           <div className="profile_title">
             <h3 className="text-24-black uppercase text-center line-clamp-1">
@@ -42,7 +42,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
         </div>
 
         <div className="flex-1 flex flex-col gap-5 lg:-mt-5">
-          <p className="text-30-bold">
+          <p className="text-30-bold !text-green-50">
             {session?.id === id ? "Your" : "All"} Startups
           </p>
           <ul className="card_grid-sm">
