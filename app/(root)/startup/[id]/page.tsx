@@ -1,8 +1,5 @@
 import { Suspense } from "react";
 import { client } from "@/sanity/lib/client";
-import {
-  STARTUP_BY_ID_QUERY,
-} from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import { formatDate } from "@/lib/utils";
 import Link from "next/link";
@@ -12,6 +9,7 @@ import markdownit from "markdown-it";
 import { Skeleton } from "@/components/ui/skeleton";
 import View from "@/components/View";
 import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
+import { STARTUP_BY_ID_QUERY } from "@/sanity/lib/queries";
 
 const md = markdownit();
 

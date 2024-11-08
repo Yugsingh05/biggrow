@@ -2,12 +2,24 @@ import React from 'react'
 import Ping from './Ping'
 import { client } from '@/sanity/lib/client';
 import { STARTUP_VIEWS_QUERY } from '@/sanity/lib/queries';
+import { unstable_after as after } from "next/server";
+import { WriteClient } from '@/sanity/lib/write-client';
 
 const View = async ({ id }: { id: string }) => {
 
   const { views: totalViews } = await client
-  .withConfig({ useCdn: false })
-  .fetch(STARTUP_VIEWS_QUERY, { id });
+    .withConfig({ useCdn: false })
+    .fetch(STARTUP_VIEWS_QUERY, { id });
+
+  after(
+    async () =>
+
+      (await WriteClient
+        .patch(id)
+        .set({ views: totalViews + 1 })
+        .commit())
+      
+  );
 
   const correctView = totalViews > 1 ? "views": "view"
 

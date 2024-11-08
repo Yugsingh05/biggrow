@@ -34,6 +34,7 @@ const Navbar = async () => {
                 <span>{session?.user?.name}</span>
               </Link>
             </>
+           
           ) : (
             <form
               action={async () => {
