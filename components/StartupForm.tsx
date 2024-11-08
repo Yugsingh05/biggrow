@@ -77,9 +77,9 @@ const StartupForm = () => {
   });
 
   return (
-    <form action={formAction} className="startup-form">
-      <div>
-        <label htmlFor="title" className="startup-form_label">
+    <form action={formAction} className="startup-form !mt-0 ">
+      <div className=" mt-3">
+        <label htmlFor="title " className="startup-form_label  !text-white">
           Title
         </label>
         <Input
@@ -94,7 +94,7 @@ const StartupForm = () => {
       </div>
 
       <div>
-        <label htmlFor="description" className="startup-form_label">
+        <label htmlFor="description" className="startup-form_label  !text-white">
           Description
         </label>
         <Textarea
@@ -111,7 +111,7 @@ const StartupForm = () => {
       </div>
 
       <div>
-        <label htmlFor="category" className="startup-form_label">
+        <label htmlFor="category" className="startup-form_label  !text-white">
           Category
         </label>
         <Input
@@ -128,7 +128,7 @@ const StartupForm = () => {
       </div>
 
       <div>
-        <label htmlFor="link" className="startup-form_label">
+        <label htmlFor="link" className="startup-form_label  !text-white">
           Image URL
         </label>
         <Input
@@ -143,7 +143,7 @@ const StartupForm = () => {
       </div>
 
       <div data-color-mode="light">
-        <label htmlFor="pitch" className="startup-form_label">
+        <label htmlFor="pitch" className="startup-form_label  !text-white">
           Pitch
         </label>
 
@@ -153,7 +153,7 @@ const StartupForm = () => {
           id="pitch"
           preview="edit"
           height={300}
-          style={{ borderRadius: 20, overflow: "hidden" }}
+          style={{ borderRadius: 20, overflow: "hidden" ,marginTop:"10px"}}
           textareaProps={{
             placeholder:
               "Briefly describe your idea and what problem it solves",
