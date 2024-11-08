@@ -4,6 +4,7 @@ import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
 import { STARTUPS_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import { auth } from "@/auth";
+import { LampDemo } from "@/components/HerSection";
 
 async function Home({
   searchParams,
@@ -17,7 +18,7 @@ async function Home({
 
   return (
     <>
-      <section className="pink_container">
+      {/* <section className="pink_container">
         <h1 className="heading">
           Pitch Your Startup,
           <br />
@@ -31,7 +32,8 @@ async function Home({
         </p>
 
         <SearchForm query={query} />
-      </section>
+      </section> */}
+      <LampDemo query={query}/>
 
       {/* // check the add button from shadcn */}
 

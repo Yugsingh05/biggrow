@@ -35,14 +35,13 @@ const Navbar = async () => {
                   await signOut({ redirectTo: "/" });
                 }}
               >
-                <button type="submit">
+                
                   <span className="max-sm:hidden !text-white-100">
                   <button className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-white dark:text-white text-white rounded-lg font-bold transform hover:-translate-y-1 transition duration-400">
-  Create
+  Logout
 </button>
                   </span>
                   <LogOut className="size-6 sm:hidden text-red-500" />
-                </button>
               </form>
 
               <Link href={`/user/${session?.id}`}>
