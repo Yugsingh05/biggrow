@@ -25,6 +25,7 @@
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.63.0",
     "@sentry/nextjs": "^8.37.1",
+    "@tabler/icons-react": "^3.21.0",
     "@tailwindcss/typography": "github:tailwindcss/typography",
     "@uiw/react-md-editor": "^4.0.4",
     "class-variance-authority": "^0.7.0",

@@ -5,6 +5,7 @@ import { STARTUPS_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import { auth } from "@/auth";
 import { LampDemo } from "@/components/HerSection";
+import { string } from "zod";
 
 async function Home({
   searchParams,
@@ -15,6 +16,7 @@ async function Home({
   const params = {search : query || null}
 
   const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY,params });
+  console.log(posts)
 
   return (
     <>
@@ -33,7 +35,7 @@ async function Home({
 
         <SearchForm query={query} />
       </section> */}
-      <LampDemo query={query}/>
+      <LampDemo query={query || ""}/>
 
       {/* // check the add button from shadcn */}
 
