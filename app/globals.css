@@ -128,7 +128,7 @@
     }
 
     .search-input {
-        @apply flex-1 font-bold placeholder:font-semibold placeholder:text-black-100 w-full h-auto outline-none;
+        @apply flex-1 font-bold placeholder:font-semibold placeholder:text-black-100 w-full h-auto outline-none ;
     }
 
     .search-btn {
@@ -162,7 +162,7 @@
 
     /* startupform */
     .startup-form {
-        @apply max-w-2xl mx-auto bg-black my-10 space-y-8 px-6;
+        @apply max-w-2xl mx-auto h-auto bg-black my-10 space-y-8 px-6;
     }
 
     .startup-form_label {
