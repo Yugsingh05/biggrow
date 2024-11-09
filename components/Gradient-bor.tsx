@@ -11,7 +11,7 @@ export function BackgroundGradientDemo({
   }>) {
   return (
     <div className="mt-5">
-      <BackgroundGradient className="rounded-[22px]  max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900 min-w-full bg-black text-white">
+      <BackgroundGradient className="rounded-[22px]  max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900 min-w-full bg-black text-white flex flex-wrap">
         {children}
       </BackgroundGradient>
     </div>

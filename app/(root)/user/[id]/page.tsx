@@ -19,7 +19,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <>
-      <section className="profile_container !bg-gradient-to-r from-[#8e44ad] to-[#e91e63] p-5">
+      <section className="profile_container !bg-gradient-to-r from-[#021850] to-[#021850] p-5">
         <div className="profile_card shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105">
           <div className="profile_title">
             <h3 className="text-24-black uppercase text-center line-clamp-1">

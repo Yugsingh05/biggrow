@@ -78,7 +78,7 @@ const StartupForm = () => {
 
   return (
     <form action={formAction} className="startup-form !mt-0  ">
-      <div className=" mt-3">
+      <div className=" mt-10">
         <label htmlFor="title " className="startup-form_label  !text-white">
           Title
         </label>
