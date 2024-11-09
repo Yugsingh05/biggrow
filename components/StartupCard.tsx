@@ -66,12 +66,14 @@ const StartupCard = ({post} : {post : StartupTypeCard}) => {
         {/* <Button className="startup-card_btn " asChild>
           <Link href={`/startup/${_id}`}>Details</Link>
         </Button> */}
+        <Link href={`/startup/${_id}`}>
         <button className="p-[3px] relative">
   <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
   <div className="px-8 py-2  bg-black rounded-full relative group transition duration-200 text-white hover:bg-transparent">
-  <Link href={`/startup/${_id}`}>Details</Link>
+  Details
   </div>
 </button>
+</Link>
       </div>
 
     
