@@ -11,7 +11,7 @@ const Page = async () => {
   return (
     <>
     
-      <section className="min-h-[360px] "><Vortex>
+      <section className=" py-56 -my-19"><Vortex>
         <h1 className="heading ">Submit Your Startup</h1>
       </Vortex>
       </section>
