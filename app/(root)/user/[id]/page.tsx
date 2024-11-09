@@ -19,8 +19,8 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <>
-      <section className="profile_container !bg-cyan-600">
-        <div className="profile_card">
+      <section className="profile_container !bg-gradient-to-r from-[#8e44ad] to-[#e91e63] p-5">
+        <div className="profile_card shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105">
           <div className="profile_title">
             <h3 className="text-24-black uppercase text-center line-clamp-1">
               {user.name}
@@ -32,7 +32,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
             alt={user.name}
             width={220}
             height={220}
-            className="profile_image"
+            className="profile_image rounded-full border-4 border-white"
           />
 
           <p className="text-30-extrabold mt-7 text-center">
@@ -50,6 +50,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
               <UserStartups id={id} />
             </Suspense>
           </ul>
+         
         </div>
       </section>
     </>

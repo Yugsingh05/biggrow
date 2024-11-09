@@ -37,7 +37,7 @@ async function Home({
 
       {/* // check the add button from shadcn */}
 
-      <section className="section-container !bg-black ">
+      <section className="section-container !bg-black px-2 ">
         <p className="text-30-bold !text-white">
           {query ? `Search results for ${query}` : "All startups"}
         </p>
